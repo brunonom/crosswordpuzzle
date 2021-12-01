@@ -376,12 +376,17 @@ function setgame() {
     banner.style.width = `90vw`;
     banner.style.display = 'flex';
     banner.style.margin = '0';
-    // banner.style.borderBottom = '1px solid red';
     banner.style.alignItems = 'center';
     banner.style.justifyContent = 'center';
 
-    const credits = document.createElement('p');
-    credits.innerHTML = '';
+    const instructions = document.createElement('p');
+    document.body.appendChild(instructions);
+    instructions.innerHTML = `controles: setas e barra de espaço`;
+    instructions.style.position = 'absolute';
+    instructions.style.bottom = '40px';
+    instructions.style.left = '40px';
+    instructions.style.color = 'white';
+    instructions.style.fontSize = '20px';
 
     setclues();
     setboard();
