@@ -368,6 +368,21 @@ function setgame() {
         }
     });
 
+    const banner = document.createElement('h1');
+    document.body.appendChild(banner);
+    banner.innerHTML = 'palavras cruzadas';
+    banner.style.color = 'white';
+    banner.style.height = `10vh`;
+    banner.style.width = `90vw`;
+    banner.style.display = 'flex';
+    banner.style.margin = '0';
+    // banner.style.borderBottom = '1px solid red';
+    banner.style.alignItems = 'center';
+    banner.style.justifyContent = 'center';
+
+    const credits = document.createElement('p');
+    credits.innerHTML = '';
+
     setclues();
     setboard();
     highlight();
@@ -378,8 +393,8 @@ function setgame() {
 function setbuttons() {
     const buttondiv = document.createElement('div');
     document.body.appendChild(buttondiv);
-    buttondiv.style.height = `${boardsize * 0.25}px`;
-    buttondiv.style.width = `${boardsize + boardsize * 0.5 + 10}px`;
+    buttondiv.style.height = `10vh`;
+    buttondiv.style.width = `90vw`;
 
     const clearbutton = document.createElement('div');
     buttondiv.appendChild(clearbutton);
