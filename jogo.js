@@ -1,17 +1,17 @@
 let board = [
-    ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
-    ["0", " ", " ", " ", " ", "0", " ", " ", " ", " ", " ", "0", "0"],
-    ["0", " ", " ", " ", " ", "0", " ", " ", " ", " ", " ", "0", "0"],
-    ["0", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "0"],
-    ["0", " ", " ", " ", "0", " ", " ", " ", "0", " ", " ", " ", "0"],
-    ["0", "0", "0", " ", " ", " ", " ", "0", " ", " ", " ", " ", "0"],
-    ["0", " ", " ", " ", " ", " ", "0", " ", " ", " ", " ", " ", "0"],
-    ["0", " ", " ", " ", " ", "0", " ", " ", " ", " ", "0", "0", "0"],
-    ["0", " ", " ", " ", "0", " ", " ", " ", "0", " ", " ", " ", "0"],
-    ["0", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "0"],
-    ["0", "0", " ", " ", " ", " ", " ", "0", " ", " ", " ", " ", "0"],
-    ["0", "0", " ", " ", " ", " ", " ", "0", " ", " ", " ", " ", "0"],
-    ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]
+    ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
+    ['0', ' ', ' ', ' ', ' ', '0', ' ', ' ', ' ', ' ', ' ', '0', '0'],
+    ['0', ' ', ' ', ' ', ' ', '0', ' ', ' ', ' ', ' ', ' ', '0', '0'],
+    ['0', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '0'],
+    ['0', ' ', ' ', ' ', '0', ' ', ' ', ' ', '0', ' ', ' ', ' ', '0'],
+    ['0', '0', '0', ' ', ' ', ' ', ' ', '0', ' ', ' ', ' ', ' ', '0'],
+    ['0', ' ', ' ', ' ', ' ', ' ', '0', ' ', ' ', ' ', ' ', ' ', '0'],
+    ['0', ' ', ' ', ' ', ' ', '0', ' ', ' ', ' ', ' ', '0', '0', '0'],
+    ['0', ' ', ' ', ' ', '0', ' ', ' ', ' ', '0', ' ', ' ', ' ', '0'],
+    ['0', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '0'],
+    ['0', '0', ' ', ' ', ' ', ' ', ' ', '0', ' ', ' ', ' ', ' ', '0'],
+    ['0', '0', ' ', ' ', ' ', ' ', ' ', '0', ' ', ' ', ' ', ' ', '0'],
+    ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
 ];
 let answer = [
     ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
@@ -28,164 +28,195 @@ let answer = [
     ['0', '0', 'O', 'A', 'S', 'I', 'S', '0', 'S', 'A', 'I', 'R', '0'],
     ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
 ];
+let cluenumbers = [
+    [00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00],
+    [00, 01, 02, 03, 04, 00, 05, 06, 07, 08, 09, 00, 00],
+    [00, 10, 99, 99, 99, 00, 11, 99, 99, 99, 99, 00, 00],
+    [00, 12, 99, 99, 99, 13, 99, 99, 99, 99, 99, 14, 00],
+    [00, 15, 99, 99, 00, 16, 99, 99, 00, 17, 99, 99, 00],
+    [00, 00, 00, 18, 19, 99, 99, 00, 20, 99, 99, 99, 00],
+    [00, 21, 22, 99, 99, 99, 00, 23, 99, 99, 99, 99, 00],
+    [00, 24, 99, 99, 99, 00, 25, 99, 99, 99, 00, 00, 00],
+    [00, 26, 99, 99, 00, 27, 99, 99, 00, 28, 29, 30, 00],
+    [00, 31, 99, 99, 32, 99, 99, 99, 33, 99, 99, 99, 00],
+    [00, 00, 34, 99, 99, 99, 99, 00, 35, 99, 99, 99, 00],
+    [00, 00, 36, 99, 99, 99, 99, 00, 37, 99, 99, 99, 00],
+    [00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00]
+];
 let cluesacross = [
-    ["segundo cargo mais alto do executivo"],
-    ["lições"],
-    ["paraíso bíblico"],
-    ["espécie de macaco da amazônia"],
-    ["jogar pela janela"],
-    ["sente paixão"],
-    ["___ maria braga: apresentadora de televisão brasileira"],
-    ["cólera"],
-    ["resíduo da cerveja e do refrigerante"],
-    ["corte magro do boi"],
-    ["alvo da adimração"],
-    ["faço acontecer"],
-    ["filha da filha"],
-    ["aprovação"],
-    ["email enviado que preserva o anonimato dos destinitários"],
-    ["os estados unidos, como eles se conhecem"],
-    ["onomatopéia da metralhadora"],
-    ["aquele que é atraído por pessoas do mesmo gênero"],
-    ["combinei"],
-    ["furacão ____: atingiu a flórida em 2017"],
-    ["região fértil do deserto"],
-    ["ir embora"]
+    [1, 'segundo cargo mais alto do executivo'],
+    [5, 'lições'],
+    [10, 'paraíso bíblico'],
+    [11, 'espécie de macaco da amazônia'],
+    [12, 'jogar pela janela'],
+    [15, 'sente paixão'],
+    [16, '___ maria braga: apresentadora de televisão brasileira'],
+    [17, 'cólera'],
+    [18, 'resíduo da cerveja e do refrigerante'],
+    [20, 'corte magro do boi'],
+    [21, 'alvo da adimração'],
+    [23, 'faço acontecer'],
+    [24, 'filha da filha'],
+    [25, 'aprovação'],
+    [26, 'email enviado que preserva o anonimato dos destinitários'],
+    [27, 'os estados unidos, como eles se conhecem'],
+    [28, 'onomatopéia da metralhadora'],
+    [31, 'aquele que é atraído por pessoas do mesmo gênero'],
+    [34, 'combinei'],
+    [35, 'furacão ____: atingiu a flórida em 2017'],
+    [36, 'região fértil do deserto'],
+    [37, 'ir embora'],
 ];
 let cluesdown = [
-    ["proíbe"],
-    ["igualmente"],
-    ["decapitação do feto morto para facilitar a saída da bacia"],
-    ["n"],
-    ["vale _ ____: digno do esforço necessário"],
-    ["____ maior: constelação setentrional"],
-    ["deixe, em inglês"],
-    ["cultivo do solo"],
-    ["jô ______: apresentador de televisão brasileiro"],
-    ["congênito"],
-    ["galho"],
-    ["deus no islã"],
-    ["padrão de pilha"],
-    ["nine ____ nails: banda de rock industrial americana"],
-    ["compostura"],
-    ["consoantes e vogais de \"cave\", respesctivamente"],
-    ["machado de _____: escritor brasileiro"],
-    ["consumi"],
-    ["____ malek: ator americano de mr. robot"],
-    ["organização mundial da saúde"],
-    ["elevar, erguer"],
-    ["x"]
+    [1, 'proíbe'],
+    [2, 'igualmente'],
+    [3, 'decapitação do feto morto para facilitar a saída da bacia'],
+    [4, 'n'],
+    [5, 'vale _ ____: digno do esforço necessário'],
+    [6, '____ maior: constelação setentrional'],
+    [7, 'deixe, em inglês'],
+    [8, 'cultivo do solo'],
+    [9, 'jô ______: apresentador de televisão brasileiro'],
+    [13, 'congênito'],
+    [14, 'galho'],
+    [19, 'deus no islã'],
+    [20, 'padrão de pilha'],
+    [21, 'nine ____ nails: banda de rock industrial americana'],
+    [22, 'compostura'],
+    [23, 'consoantes e vogais de \'cave\', respesctivamente'],
+    [25, 'machado de _____: escritor brasileiro'],
+    [27, 'consumi'],
+    [29, '____ malek: ator americano de mr. robot'],
+    [30, 'organização mundial da saúde'],
+    [32, 'elevar, erguer'],
+    [33, 'x'],
 ];
 let boardsize;
 let squaresize;
 let sidelength = board.length - 2;
+
 let typingacross = true;
 let selectedrow = 1;
 let selectedcol = 1;
-let selectedclue = 1;
-let boarddiv;
-let cluesdiv;
+let alreadywon = false;
+
+let highlightedsquares = [];
+let highlightedclue;
 
 function setclues() {
-    let marks = [];
-    for (let i = 0; i <= sidelength; i++) {
-        for (let j = 0; j <= sidelength; j++) {
-            if (board[i][j] != "0") {
-                const clueisdown = (board[i - 1][j] == "0" && board[i + 1][j] != "0");
-                const clueisacross = (board[i][j - 1] == "0" && board[i][j + 1] != "0");
-                if (clueisacross || clueisdown) {
-                    marks.push([clueisacross, clueisdown, i, j]);
-                }
+    const getsqid = (num) => {
+        for (let i = 1; i <= sidelength; i++) {
+            for (let j = 1; j <= sidelength; j++) {
+                if (cluenumbers[i][j] == num) return (i * (sidelength + 2) + j);
             }
         }
-    }
-
-    acrosscounter = 0;
-    downcounter = 0;
-    for (let i = 0; i < marks.length; i++) {
-        let sq = getsquare(marks[i][2], marks[i][3]);
-        let cluenumber = document.createElement("span");
-        cluenumber.innerHTML = i + 1;
-        sq.appendChild(cluenumber);
-        if (marks[i][0]) {
-            cluesacross[acrosscounter].unshift(i + 1);
-            cluesacross[acrosscounter].push(marks[i][2], marks[i][3]);
-            acrosscounter++;
-        }
-        if (marks[i][1]) {
-            cluesdown[downcounter].unshift(i + 1);
-            cluesdown[downcounter].push(marks[i][2], marks[i][3]);
-            downcounter++;
-        }
-    }
-
-    cluesdiv = document.createElement("div");
-    document.body.insertBefore(cluesdiv, boarddiv);
+    };
+    cluesdiv = document.createElement('div');
+    document.body.appendChild(cluesdiv);
     cluesdiv.style.height = `${boardsize}px`;
     cluesdiv.style.width = `${boardsize * 0.5}px`;
-    cluesdiv.style.border = "10px solid black";
-    cluesdiv.style.marginRight = "10px";
-    cluesdiv.style.flexDirection = "column";
+    cluesdiv.style.border = '10px solid black';
+    cluesdiv.style.marginRight = '10px';
+    cluesdiv.style.flexDirection = 'column';
 
     for (let i = 0; i < 2; i++) {
-        const section = document.createElement("div");
+        const section = document.createElement('div');
         cluesdiv.appendChild(section);
-        section.style.display = "block";
-        section.style.height = "50%";
-        section.style.width = "100%";
-        section.style.backgroundColor = "white";
-        section.style.overflowY = "scroll";
-        section.style.boxSizing = "border-box";
-        const header = document.createElement("h1");
+        section.style.boxSizing = 'border-box';
+        section.style.display = 'block';
+        section.style.height = '50%';
+        section.style.width = '100%';
+        section.style.backgroundColor = 'white';
+
+        const header = document.createElement('h1');
         section.appendChild(header);
-        header.style.marginLeft = "10px";
+        header.style.boxSizing = 'border-box';
+        header.style.marginLeft = '10px';
+        header.style.height = '20%';
+        header.style.margin = 0;
+        header.style.borderBottom = '1px solid black';
+        header.style.padding = '15px 0 0 20px';
+
+        const scrollable = document.createElement('div');
+        section.appendChild(scrollable);
+        scrollable.style.display = 'block';
+        scrollable.style.boxSizing = 'border-box';
+        scrollable.style.overflowY = 'scroll';
+        scrollable.style.height = '80%';
+        scrollable.style.width = '100%';
 
         if (!i) {
-            section.style.borderBottom = "5px solid black";
-            header.innerHTML = "horizontal";
+            section.style.borderBottom = '5px solid black';
+            header.innerHTML = 'horizontal';
             for (let j = 0; j < cluesacross.length; j++) {
-                const p = document.createElement("p");
-                section.appendChild(p);
-                p.innerHTML = `${cluesacross[j][0]}: ${cluesacross[j][1]}`;
-                p.style.fontSize = "16px";
-                p.style.padding = "10px 10px 10px 30px";
-                p.id = `clueacross${getsquare(cluesacross[j][2], cluesacross[j][3]).id}`;
+                const p = document.createElement('p');
+                scrollable.appendChild(p);
+                p.innerHTML = `${cluesacross[j][0]}: ${(cluesacross[j][1])}`;
+                p.style.fontSize = '16px';
+                p.style.lineHeight = '1.5';
+                p.style.padding = '20px 10px 10px 40px';
+                p.id = `cla${getsqid(cluesacross[j][0])}`;
+                p.style.borderBottom = '1px solid black';
+                p.addEventListener('click', (e) => {
+                    const n = e.target.id.slice(3);
+                    selectedrow = Math.floor(n / (sidelength + 2));
+                    selectedcol = n % (sidelength + 2);
+                    typingacross = true;
+                    highlight();
+                });
             }
         } else {
-            section.style.borderTop = "5px solid black";
-            header.innerHTML = "vertical";
-            for (let j = 1; j < cluesdown.length; j++) {
-                const p = document.createElement("p");
-                section.appendChild(p);
-                p.innerHTML = `${cluesdown[j][0]}: ${cluesdown[j][1]}`;
-                p.style.fontSize = "16px";
-                p.style.padding = "10px 10px 10px 30px";
-                p.id = `cluedown${getsquare(cluesdown[j][2], cluesdown[j][3]).id}`;
+            section.style.borderTop = '5px solid black';
+            header.innerHTML = 'vertical';
+            for (let j = 0; j < cluesdown.length; j++) {
+                const p = document.createElement('p');
+                scrollable.appendChild(p);
+                p.innerHTML = `${cluesdown[j][0]}: ${(cluesdown[j][1])}`;
+                p.style.fontSize = '16px';
+                p.style.lineHeight = '1.5';
+                p.style.padding = '20px 10px 10px 40px';
+                p.id = `cld${getsqid(cluesdown[j][0])}`;
+                p.style.borderBottom = '1px solid black';
+                p.addEventListener('mousedown', (e) => {
+                    const n = e.target.id.slice(3);
+                    selectedrow = Math.floor(n / (sidelength + 2));
+                    selectedcol = n % (sidelength + 2);
+                    typingacross = false;
+                    highlight();
+                });
             }
         }
     }
 }
 
-function updateboard(dont) {
+function checkwin() {
+    if (alreadywon) return false;
+    for (let i = 1; i <= sidelength; i++) {
+        for (let j = 1; j <= sidelength; j++) {
+            if (board[i][j] != answer[i][j]) {
+                return false;
+            }
+        }
+    }
+    alreadywon = true;
+    return true;
+}
+
+function updateboard() {
     for (let i = 1; i <= sidelength; i++) {
         for (let j = 1; j <= sidelength; j++) {
             let sq = getsquare(i, j);
-            if (board[i][j] == "0") {
-                sq.style.backgroundColor = "black";
+            if (board[i][j] == '0') {
+                sq.style.backgroundColor = 'black';
             } else {
-                sq.style.backgroundColor = "white";
+                sq.style.backgroundColor = 'white';
                 sq.children[0].innerHTML = board[i][j];
             }
-            let clue = document.getElementById(`clueacross${sq.id}`);
-            if (clue != null) clue.style.backgroundColor = "white";
-            clue = document.getElementById(`cluedown${sq.id}`);
-            if (clue != null) clue.style.backgroundColor = "white";
         }
     }
-    if (!dont) hihglight();
 }
 
-function fillanswers() {
+function solveboard() {
     for (let i = 1; i <= sidelength; i++) {
         for (let j = 1; j <= sidelength; j++) {
             board[i][j] = answer[i][j];
@@ -193,10 +224,17 @@ function fillanswers() {
     }
 }
 
+function clearboard() {
+    for (let i = 1; i <= sidelength; i++) {
+        for (let j = 1; j <= sidelength; j++) {
+            board[i][j] = board[i][j] == '0' ? '0' : ' ';
+        }
+    }
+}
+
 function getsquare(r, c) {
     if (r) {
         if (c) {
-            // console.log(r, c);
             return document.getElementById(`sq${r * (sidelength + 2) + c}`);
         } else {
             return document.getElementById(`sq${r}`);
@@ -205,76 +243,89 @@ function getsquare(r, c) {
     return document.getElementById(`sq${selectedrow * (sidelength + 2) + selectedcol}`);
 }
 
-function hihglight() {
-    let line = [getsquare()];
+function highlight() {
+    clearhighlight();
+    highlightedsquares = [getsquare()];
     let copy = selectedcol;
     if (typingacross) {
-        copy = selectedcol;
-        copy++;
-        while (board[selectedrow][copy] != "0") {
-            line.push(getsquare(selectedrow, copy));
-            copy++;
-        }
-        copy = selectedcol;
-        copy--;
-        while (board[selectedrow][copy] != "0") {
-            line.unshift(getsquare(selectedrow, copy));
+        copy = selectedcol - 1;
+        while (board[selectedrow][copy] != '0') {
+            highlightedsquares.unshift(getsquare(selectedrow, copy));
             copy--;
+        }
+
+        highlightedclue = document.getElementById(`cla${highlightedsquares[0].id.slice(2)}`);
+
+        copy = selectedcol + 1;
+        while (board[selectedrow][copy] != '0') {
+            highlightedsquares.push(getsquare(selectedrow, copy));
+            copy++;
         }
     } else /*typingdown*/ {
-        copy = selectedrow;
-        copy++;
-        while (board[copy][selectedcol] != "0") {
-            line.push(getsquare(copy, selectedcol));
-            copy++;
-        }
-        copy = selectedrow;
-        copy--;
-        while (board[copy][selectedcol] != "0") {
-            line.unshift(getsquare(copy, selectedcol));
+        copy = selectedrow - 1;
+        while (board[copy][selectedcol] != '0') {
+            highlightedsquares.unshift(getsquare(copy, selectedcol));
             copy--;
         }
-    }
-    for (let i = 0; i < line.length; i++) {
-        line[i].style.backgroundColor = "lightblue";
-    }
-    getsquare().style.backgroundColor = "lightskyblue";
 
-    console.log(line[0].id);
-    let clue = typingacross ? document.getElementById(`clueacross${line[0].id}`) : document.getElementById(`cluedown${line[0].id}`);
-    clue.style.backgroundColor = "lightblue";
-    clue.scrollIntoView();
+        highlightedclue = document.getElementById(`cld${highlightedsquares[0].id.slice(2)}`);
 
+        copy = selectedrow + 1;
+        while (board[copy][selectedcol] != '0') {
+            highlightedsquares.push(getsquare(copy, selectedcol));
+            copy++;
+        }
+    }
+
+    for (let i = 0; i < highlightedsquares.length; i++) {
+        highlightedsquares[i].style.backgroundColor = 'lightblue';
+    }
+    getsquare().style.backgroundColor = 'lightskyblue';
+
+    highlightedclue.style.backgroundColor = 'lightblue';
+    highlightedclue.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+}
+
+function clearhighlight() {
+    for (let i = 0; i < highlightedsquares.length; i++) {
+        highlightedsquares[i].style.backgroundColor = 'white';
+    }
+    if (highlightedclue) highlightedclue.style.backgroundColor = 'white';
 }
 
 function setboard() {
-    boarddiv = document.createElement("div");
+    boarddiv = document.createElement('div');
     document.body.appendChild(boarddiv);
     boarddiv.style.height = `${boardsize}px`;
     boarddiv.style.width = `${boardsize}px`;
-    boarddiv.style.border = "10px solid black";
+    boarddiv.style.border = '10px solid black';
 
     for (let i = 1; i <= sidelength; i++) {
         for (let j = 1; j <= sidelength; j++) {
-            let square = document.createElement("div");
+            const square = document.createElement('div');
             boarddiv.appendChild(square);
             square.id = `sq${i * (sidelength + 2) + j}`;
             square.style.height = `${squaresize}px`;
             square.style.width = `${squaresize}px`;
-            square.style.border = "1px solid black";
-            square.appendChild(document.createElement("p"));
-            if (board[i][j] != "0") {
-                square.addEventListener("mousedown", (e) => {
-                    const src = (e.target.tagName.toLocaleLowerCase() == "div") ? e.target : e.target.parentElement;
+            square.style.border = '1px solid black';
+            square.appendChild(document.createElement('p'));
+
+            const span = document.createElement('span');
+            square.appendChild(span);
+
+            if (board[i][j] != '0') {
+                span.innerHTML = `${cluenumbers[i][j] != 99 ? cluenumbers[i][j] : ''}`;
+                square.addEventListener('mousedown', (e) => {
+                    const src = (e.target.tagName.toLocaleLowerCase() == 'div') ? e.target : e.target.parentElement;
                     const n = parseInt(src.id.slice(2));
                     selectedrow = Math.floor(n / (sidelength + 2));
                     selectedcol = n % (sidelength + 2);
-                    updateboard();
+                    highlight();
                 });
             }
         }
     }
-    updateboard(1);
+    updateboard();
     return;
 }
 
@@ -293,121 +344,113 @@ function setgame() {
     boardsize = Math.min(window.innerHeight, window.innerWidth) * 0.7;
     squaresize = boardsize / sidelength - 2;
 
-    document.addEventListener("keyup", (event) => {
+    document.addEventListener('keyup', (event) => {
         switch (event.code) {
-            case "Space":
-                typingacross = !typingacross;
-                updateboard();
-                break;
-            case "ArrowUp":
-                movecursor("up");
-                updateboard();
-                break;
-            case "ArrowDown":
-                movecursor("down");
-                updateboard();
-                break;
-            case "ArrowRight":
-                movecursor("right");
-                updateboard();
-                break;
-            case "ArrowLeft":
-                movecursor("left");
-                updateboard();
-                break;
-            case "Backspace":
-                if (board[selectedrow][selectedcol] == " ") {
-                    typingacross ? movecursor("left") : movecursor("up");
+            case 'Space': typingacross = !typingacross; highlight(); break;
+            case 'ArrowUp': movecursor('up'); highlight(); break;
+            case 'ArrowDown': movecursor('down'); highlight(); break;
+            case 'ArrowRight': movecursor('right'); highlight(); break;
+            case 'ArrowLeft': movecursor('left'); highlight(); break;
+            case 'Backspace':
+                if (board[selectedrow][selectedcol] == ' ') {
+                    typingacross ? movecursor('left') : movecursor('up');
                 } else {
-                    board[selectedrow][selectedcol] = " ";
+                    board[selectedrow][selectedcol] = ' ';
                 }
-                updateboard();
-                break;
-            case "Delete":
-                board[selectedrow][selectedcol] = " ";
-                updateboard();
-                break;
-            case "NumpadEnter":
-                fillanswers();
-                updateboard();
-                break;
+                updateboard(); highlight(); break;
+            case 'Delete': board[selectedrow][selectedcol] = ' '; updateboard(); highlight(); break;
         }
         if (itsaletter(event.key)) {
-            // console.log(event.key.toLocaleUpperCase().length);
             board[selectedrow][selectedcol] = event.key.toLocaleUpperCase();
-            typingacross ? movecursor("right") : movecursor("down");
-            updateboard();
+            typingacross ? movecursor('right') : movecursor('down');
+            updateboard(); highlight();
+            if (checkwin()) {alert('You Won!');}
         }
     });
 
-    setboard();
     setclues();
+    setboard();
+    highlight();
+    setbuttons();
     return;
+}
+
+function setbuttons() {
+    const buttondiv = document.createElement('div');
+    document.body.appendChild(buttondiv);
+    buttondiv.style.height = `${boardsize * 0.25}px`;
+    buttondiv.style.width = `${boardsize + boardsize * 0.5 + 10}px`;
+
+    const clearbutton = document.createElement('div');
+    buttondiv.appendChild(clearbutton);
+    clearbutton.style.backgroundColor = 'white';
+    clearbutton.appendChild(document.createElement('p'));
+    clearbutton.children[0].innerHTML = 'limpar tudo';
+    clearbutton.style.border = '10px solid black';
+    clearbutton.style.padding = '10px';
+    clearbutton.style.marginRight = '10px';
+    clearbutton.children[0].style.userSelect = 'none';
+    clearbutton.addEventListener('mouseover', (e) => {
+        const src = e.target.tagName.toLocaleLowerCase() == 'div' ? e.target : e.target.parentElement;
+        src.style.backgroundColor = 'lightgray';
+    });
+    clearbutton.addEventListener('mouseout', (e) => {
+        const src = e.target.tagName.toLocaleLowerCase() == 'div' ? e.target : e.target.parentElement;
+        src.style.backgroundColor = 'white';
+    });
+    clearbutton.addEventListener('click', (e) => {
+        clearboard();
+        updateboard();
+        clearhighlight();
+    });
+    const solvebutton = document.createElement('div');
+    buttondiv.appendChild(solvebutton);
+    solvebutton.style.backgroundColor = 'white';
+    solvebutton.appendChild(document.createElement('p'));
+    solvebutton.children[0].innerHTML = 'mostrar resposta';
+    solvebutton.style.border = '10px solid black';
+    solvebutton.style.padding = '10px';
+    solvebutton.style.marginRight = '10px';
+    solvebutton.children[0].style.userSelect = 'none';
+    solvebutton.addEventListener('mouseover', (e) => {
+        const src = e.target.tagName.toLocaleLowerCase() == 'div' ? e.target : e.target.parentElement;
+        src.style.backgroundColor = 'lightgray';
+    });
+    solvebutton.addEventListener('mouseout', (e) => {
+        const src = e.target.tagName.toLocaleLowerCase() == 'div' ? e.target : e.target.parentElement;
+        src.style.backgroundColor = 'white';
+    });
+    solvebutton.addEventListener('click', (e) => {
+        solveboard();
+        alreadywon = true;
+        updateboard();
+        clearhighlight();
+    });
+    // buttondiv.style.display = `${boardsize + boardsize * 0.5}`;
 }
 
 function movecursor(direction) {
     switch (direction) {
-        case "up":
+        case 'up':
+            if (selectedrow == 1);
             do {
                 selectedrow = ((sidelength - 1) + selectedrow - 1) % sidelength + 1;
-            } while (board[selectedrow][selectedcol] == "0");
+            } while (board[selectedrow][selectedcol] == '0');
             break;
-        case "down":
+        case 'down':
             do {
                 selectedrow = ((sidelength - 1) + selectedrow + 1) % sidelength + 1;
-            } while (board[selectedrow][selectedcol] == "0");
+            } while (board[selectedrow][selectedcol] == '0');
             break;
-        case "left":
+        case 'left':
             do {
                 selectedcol = ((sidelength - 1) + selectedcol - 1) % sidelength + 1;
-            } while (board[selectedrow][selectedcol] == "0");
+            } while (board[selectedrow][selectedcol] == '0');
             break;
-        case "right":
+        case 'right':
             do {
                 selectedcol = ((sidelength - 1) + selectedcol + 1) % sidelength + 1;
-            } while (board[selectedrow][selectedcol] == "0");
-            break;
-        default:
-            console.log("unknown direction");
+            } while (board[selectedrow][selectedcol] == '0');
             break;
     }
 }
-
-// let prevanswer = [
-//     ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'],
-//     ['0', ' ', ' ', 'J', ' ', '0', ' ', ' ', ' ', 'G', ' ', '0', 'L', ' ', ' ', ' ', '0'],
-//     ['0', ' ', ' ', 'A', ' ', '0', ' ', ' ', ' ', 'U', ' ', '0', 'A', ' ', ' ', ' ', '0'],
-//     ['0', 'R', 'E', 'V', 'E', 'R', 'S', 'I', 'B', 'I', 'L', 'I', 'D', 'A', 'D', 'E', '0'],
-//     ['0', ' ', ' ', 'A', '0', ' ', ' ', ' ', '0', 'L', 'O', 'R', 'O', 'T', 'A', 'S', '0'],
-//     ['0', ' ', ' ', 'S', ' ', ' ', ' ', '0', 'V', 'H', ' ', ' ', 'B', '0', '0', '0', '0'],
-//     ['0', '0', '0', 'C', ' ', ' ', '0', 'D', 'I', 'O', '0', ' ', 'O', 'R', ' ', ' ', '0'],
-//     ['0', ' ', ' ', 'R', ' ', '0', 'C', 'E', 'N', 'T', 'R', 'O', 'M', 'E', 'R', 'O', '0'],
-//     ['0', ' ', ' ', 'I', '0', 'D', 'E', 'S', 'T', 'I', 'N', 'O', '0', 'Q', ' ', ' ', '0'],
-//     ['0', 'N', 'A', 'P', 'O', 'L', 'I', 'T', 'A', 'N', 'O', '0', ' ', 'U', ' ', ' ', '0'],
-//     ['0', ' ', ' ', 'T', 'R', ' ', '0', 'E', 'G', 'A', '0', ' ', ' ', 'I', '0', '0', '0'],
-//     ['0', '0', '0', '0', 'L', ' ', ' ', 'M', 'E', '0', ' ', ' ', ' ', 'S', ' ', ' ', '0'],
-//     ['0', ' ', ' ', ' ', 'E', ' ', ' ', 'P', '0', ' ', ' ', ' ', '0', 'I', ' ', ' ', '0'],
-//     ['0', 'C', 'A', 'R', 'A', 'C', 'T', 'E', 'R', 'I', 'S', 'T', 'I', 'C', 'A', 'S', '0'],
-//     ['0', ' ', ' ', ' ', 'N', '0', ' ', 'R', ' ', ' ', ' ', '0', ' ', 'A', ' ', ' ', '0'],
-//     ['0', ' ', ' ', ' ', 'S', '0', ' ', 'A', ' ', ' ', ' ', '0', ' ', 'O', ' ', ' ', '0'],
-//     ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0']
-// ];
-// let freespace = [
-//     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-//     [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
-//     [0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0],
-//     [0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0],
-//     [0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0],
-//     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-// ];
