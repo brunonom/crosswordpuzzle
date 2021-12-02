@@ -6,41 +6,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Palavras Cruzadas</title>
         <script type="text/javascript" src="jogo.js"></script>
-        <style>
-            body{
-                display: flex;
-                flex-flow: row wrap;
-                align-items: center;
-                justify-content: center;
-                width: 100vw;
-                height: 100vh;
-                margin: 0;
-                padding: 0;
-                background-color: #120a8f;
-                font-family: monospace;
-            }
-            div{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-flow: row wrap;
-                position: relative;
-            }
-            span{
-                font-size: 13px;
-                position: absolute;
-                padding: 4px;
-                top: 0;
-                left: 0;
-            }
-            p{
-                margin: 0;
-                padding: 0;
-                font-size: 25px;
-                align-self: center;
-                justify-self: center;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css" />
     </head>
-    <body onload="setgame()"></body>
+    <body onload="setgame()">
+        <div id="header">
+            <h1>palavras cruzadas</h1>
+        </div>
+        <div id="game">
+            <div id="cluebox">
+                <div class="cluessection" id="across">
+                    <h2>horizontal</h2>
+                    <div class=scrollable></div>
+                </div>
+                <div class="cluessection" id="down">
+                    <h2>vertical</h2>
+                    <div class=scrollable></div>
+                </div>
+            </div>
+            <div id="board"></div>
+        </div>
+        <div id="buttons">
+            <div class="button" id="clearbutton"></div>
+            <div class="button" id="solvebutton"></div>
+        </div>
+        <span id="controls">controles: setas e barra de espaço</span>
+    </body>
 </html>

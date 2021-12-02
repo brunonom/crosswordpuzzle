@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    max-width: 100%;
+}
+body{
+    background-color: #120a8f;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div#header{
+    height: 10%;
+    width: 100%;
+}
+h1{
+    color: white;
+    padding: 1vh 1vw;
+    border-bottom: 0.5vh solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div#game{
+    height: 80%;
+    width: 100%;
+}
+div#cluebox{
+    margin-right: 10px;
+    flex-flow: column nowrap;
+    height: 100%;
+    aspect-ratio: 1 / 2;
+}
+div.cluessection{
+    height: 50%;
+    width: 100%;
+    flex-flow: column nowrap;
+    border: 10px solid black;
+    background-color: white;
+}
+h2{
+    height: 20%;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 5%;
+    font-size: xx-large;
+}
+div.scrollable{
+    height: 80%;
+    width: 100%;
+    display: block;
+    overflow-y: auto;
+}
+p.clue{
+    padding: 10% 5% 5% 10%;
+    border-bottom: 1px solid black;
+    font-size: large;
+}
+div#board{
+    display: flex;
+    flex-flow: column;
+    border: 10px solid black;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    align-items: stretch;
+}
+div.line{
+    flex: 1 1 auto;
+    align-items: stretch;
+}
+div.square{
+    border: 1px solid black;
+    position: relative;
+    flex: 1 1 auto;
+}
+p.cluenumber{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+p.letter{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+}
+div#buttons{
+    height: 10%;
+    width: 100%;
+    flex-flow: row wrap;
+}
+div.button{
+    background-color: white;
+    border: 10px solid black;
+    padding: 10px;
+    user-select: none;
+    margin-right: 10px;
+    font-size: x-large;
+}
+span#controls{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: x-large;
+}

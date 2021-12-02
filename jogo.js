@@ -53,22 +53,22 @@ let cluesacross = [
     [16, '___ maria braga: apresentadora de televisão brasileira'],
     [17, 'cólera'],
     [18, 'resíduo da cerveja e do refrigerante'],
-    [20, 'corte magro do boi'],
+    [20, 'carne do lombo do boi'],
     [21, 'alvo da adimração'],
     [23, 'faço acontecer'],
     [24, 'filha da filha'],
     [25, 'aprovação'],
-    [26, 'email enviado que preserva o anonimato dos destinitários'],
+    [26, 'campo dos destinatários de um email cujo anonimato será preservado dos demais'],
     [27, 'os estados unidos, como eles se conhecem'],
     [28, 'onomatopéia da metralhadora'],
     [31, 'aquele que é atraído por pessoas do mesmo gênero'],
-    [34, 'combinei'],
+    [34, 'repeti sons nos finais dos versos'],
     [35, 'furacão ____: atingiu a flórida em 2017'],
     [36, 'região fértil do deserto'],
     [37, 'ir embora'],
 ];
 let cluesdown = [
-    [1, 'proíbe'],
+    [1, 'tampa, sela'],
     [2, 'igualmente'],
     [3, 'decapitação do feto morto para facilitar a saída da bacia'],
     [4, 'n'],
@@ -82,13 +82,13 @@ let cluesdown = [
     [19, 'deus no islã'],
     [20, 'padrão de pilha'],
     [21, 'nine ____ nails: banda de rock industrial americana'],
-    [22, 'compostura'],
+    [22, 'compostura, decência'],
     [23, 'consoantes e vogais de \'cave\', respesctivamente'],
     [25, 'machado de _____: escritor brasileiro'],
-    [27, 'consumi'],
+    [27, 'consumi o item'],
     [29, '____ malek: ator americano de mr. robot'],
-    [30, 'organização mundial da saúde'],
-    [32, 'elevar, erguer'],
+    [30, 'dar asas'],
+    [32, 'organização mundial da saúde'],
     [33, 'x'],
 ];
 let boardsize;
@@ -111,52 +111,18 @@ function setclues() {
             }
         }
     };
-    cluesdiv = document.createElement('div');
-    document.body.appendChild(cluesdiv);
-    cluesdiv.style.height = `${boardsize}px`;
-    cluesdiv.style.width = `${boardsize * 0.5}px`;
-    cluesdiv.style.border = '10px solid black';
-    cluesdiv.style.marginRight = '10px';
-    cluesdiv.style.flexDirection = 'column';
+    cluesdiv = document.getElementById('cluebox');
 
     for (let i = 0; i < 2; i++) {
-        const section = document.createElement('div');
-        cluesdiv.appendChild(section);
-        section.style.boxSizing = 'border-box';
-        section.style.display = 'block';
-        section.style.height = '50%';
-        section.style.width = '100%';
-        section.style.backgroundColor = 'white';
-
-        const header = document.createElement('h1');
-        section.appendChild(header);
-        header.style.boxSizing = 'border-box';
-        header.style.marginLeft = '10px';
-        header.style.height = '20%';
-        header.style.margin = 0;
-        header.style.borderBottom = '1px solid black';
-        header.style.padding = '15px 0 0 20px';
-
-        const scrollable = document.createElement('div');
-        section.appendChild(scrollable);
-        scrollable.style.display = 'block';
-        scrollable.style.boxSizing = 'border-box';
-        scrollable.style.overflowY = 'scroll';
-        scrollable.style.height = '80%';
-        scrollable.style.width = '100%';
-
         if (!i) {
-            section.style.borderBottom = '5px solid black';
-            header.innerHTML = 'horizontal';
+            const section = document.getElementById('across');
+            section.children[0].innerHTML = 'horizontal';
             for (let j = 0; j < cluesacross.length; j++) {
                 const p = document.createElement('p');
-                scrollable.appendChild(p);
+                section.children[1].appendChild(p);
                 p.innerHTML = `${cluesacross[j][0]}: ${(cluesacross[j][1])}`;
-                p.style.fontSize = '16px';
-                p.style.lineHeight = '1.5';
-                p.style.padding = '20px 10px 10px 40px';
+                p.classList = 'clue';
                 p.id = `cla${getsqid(cluesacross[j][0])}`;
-                p.style.borderBottom = '1px solid black';
                 p.addEventListener('click', (e) => {
                     const n = e.target.id.slice(3);
                     selectedrow = Math.floor(n / (sidelength + 2));
@@ -166,17 +132,14 @@ function setclues() {
                 });
             }
         } else {
-            section.style.borderTop = '5px solid black';
-            header.innerHTML = 'vertical';
+            const section = document.getElementById('down');
+            section.children[0].innerHTML = 'vertical';
             for (let j = 0; j < cluesdown.length; j++) {
                 const p = document.createElement('p');
-                scrollable.appendChild(p);
+                section.children[1].appendChild(p);
                 p.innerHTML = `${cluesdown[j][0]}: ${(cluesdown[j][1])}`;
-                p.style.fontSize = '16px';
-                p.style.lineHeight = '1.5';
-                p.style.padding = '20px 10px 10px 40px';
+                p.classList = 'clue';
                 p.id = `cld${getsqid(cluesdown[j][0])}`;
-                p.style.borderBottom = '1px solid black';
                 p.addEventListener('mousedown', (e) => {
                     const n = e.target.id.slice(3);
                     selectedrow = Math.floor(n / (sidelength + 2));
@@ -210,7 +173,7 @@ function updateboard() {
                 sq.style.backgroundColor = 'black';
             } else {
                 sq.style.backgroundColor = 'white';
-                sq.children[0].innerHTML = board[i][j];
+                sq.children[1].innerHTML = board[i][j];
             }
         }
     }
@@ -282,8 +245,8 @@ function highlight() {
     }
     getsquare().style.backgroundColor = 'lightskyblue';
 
-    highlightedclue.style.backgroundColor = 'lightblue';
-    highlightedclue.scrollIntoView({behavior: "smooth", block: "nearest", inline: "nearest"});
+    highlightedclue.style.backgroundColor = 'lightskyblue';
+    highlightedclue.scrollIntoView({behavior: "smooth", block: "nearest"});
 }
 
 function clearhighlight() {
@@ -294,33 +257,36 @@ function clearhighlight() {
 }
 
 function setboard() {
-    boarddiv = document.createElement('div');
-    document.body.appendChild(boarddiv);
-    boarddiv.style.height = `${boardsize}px`;
-    boarddiv.style.width = `${boardsize}px`;
-    boarddiv.style.border = '10px solid black';
+    const boarddiv = document.getElementById('board');
 
     for (let i = 1; i <= sidelength; i++) {
+        const line = document.createElement('div');
+        boarddiv.appendChild(line);
+        line.classList = 'line';
         for (let j = 1; j <= sidelength; j++) {
             const square = document.createElement('div');
-            boarddiv.appendChild(square);
+            line.appendChild(square);
+            square.classList = 'square';
             square.id = `sq${i * (sidelength + 2) + j}`;
-            square.style.height = `${squaresize}px`;
-            square.style.width = `${squaresize}px`;
-            square.style.border = '1px solid black';
-            square.appendChild(document.createElement('p'));
 
-            const span = document.createElement('span');
-            square.appendChild(span);
+            const cluenumber = document.createElement('p');
+            square.appendChild(cluenumber);
+            cluenumber.classList = 'cluenumber';
+
+            const letter = document.createElement('p');
+            square.appendChild(letter);
+            letter.classList = 'letter';
 
             if (board[i][j] != '0') {
-                span.innerHTML = `${cluenumbers[i][j] != 99 ? cluenumbers[i][j] : ''}`;
+                cluenumber.innerHTML = `${cluenumbers[i][j] != 99 ? cluenumbers[i][j] : ''}`;
                 square.addEventListener('mousedown', (e) => {
                     const src = (e.target.tagName.toLocaleLowerCase() == 'div') ? e.target : e.target.parentElement;
                     const n = parseInt(src.id.slice(2));
                     selectedrow = Math.floor(n / (sidelength + 2));
                     selectedcol = n % (sidelength + 2);
                     highlight();
+                    console.log(src);
+                    src.focus();
                 });
             }
         }
@@ -341,8 +307,9 @@ function itsaletter(str) {
 }
 
 function setgame() {
-    boardsize = Math.min(window.innerHeight, window.innerWidth) * 0.7;
-    squaresize = boardsize / sidelength - 2;
+    // boardsize = Math.min(window.innerHeight, window.innerWidth) * 0.7;
+    console.log(boardsize);
+    squaresize = boardsize / sidelength;
 
     document.addEventListener('keyup', (event) => {
         switch (event.code) {
@@ -364,29 +331,11 @@ function setgame() {
             board[selectedrow][selectedcol] = event.key.toLocaleUpperCase();
             typingacross ? movecursor('right') : movecursor('down');
             updateboard(); highlight();
-            if (checkwin()) {alert('You Won!');}
+            setTimeout(() => {
+                if (checkwin()) {alert('You Won!');}
+            }, 250);
         }
     });
-
-    const banner = document.createElement('h1');
-    document.body.appendChild(banner);
-    banner.innerHTML = 'palavras cruzadas';
-    banner.style.color = 'white';
-    banner.style.height = `10vh`;
-    banner.style.width = `90vw`;
-    banner.style.display = 'flex';
-    banner.style.margin = '0';
-    banner.style.alignItems = 'center';
-    banner.style.justifyContent = 'center';
-
-    const instructions = document.createElement('p');
-    document.body.appendChild(instructions);
-    instructions.innerHTML = `controles: setas e barra de espaço`;
-    instructions.style.position = 'absolute';
-    instructions.style.bottom = '40px';
-    instructions.style.left = '40px';
-    instructions.style.color = 'white';
-    instructions.style.fontSize = '20px';
 
     setclues();
     setboard();
@@ -394,22 +343,10 @@ function setgame() {
     setbuttons();
     return;
 }
-
+let completelysure = false;
 function setbuttons() {
-    const buttondiv = document.createElement('div');
-    document.body.appendChild(buttondiv);
-    buttondiv.style.height = `10vh`;
-    buttondiv.style.width = `90vw`;
-
-    const clearbutton = document.createElement('div');
-    buttondiv.appendChild(clearbutton);
-    clearbutton.style.backgroundColor = 'white';
-    clearbutton.appendChild(document.createElement('p'));
-    clearbutton.children[0].innerHTML = 'limpar tudo';
-    clearbutton.style.border = '10px solid black';
-    clearbutton.style.padding = '10px';
-    clearbutton.style.marginRight = '10px';
-    clearbutton.children[0].style.userSelect = 'none';
+    const clearbutton = document.getElementById('clearbutton');
+    clearbutton.innerHTML = 'limpar tudo';
     clearbutton.addEventListener('mouseover', (e) => {
         const src = e.target.tagName.toLocaleLowerCase() == 'div' ? e.target : e.target.parentElement;
         src.style.backgroundColor = 'lightgray';
@@ -423,15 +360,8 @@ function setbuttons() {
         updateboard();
         clearhighlight();
     });
-    const solvebutton = document.createElement('div');
-    buttondiv.appendChild(solvebutton);
-    solvebutton.style.backgroundColor = 'white';
-    solvebutton.appendChild(document.createElement('p'));
-    solvebutton.children[0].innerHTML = 'mostrar resposta';
-    solvebutton.style.border = '10px solid black';
-    solvebutton.style.padding = '10px';
-    solvebutton.style.marginRight = '10px';
-    solvebutton.children[0].style.userSelect = 'none';
+    const solvebutton = document.getElementById('solvebutton');
+    solvebutton.innerHTML = 'mostrar solução completa';
     solvebutton.addEventListener('mouseover', (e) => {
         const src = e.target.tagName.toLocaleLowerCase() == 'div' ? e.target : e.target.parentElement;
         src.style.backgroundColor = 'lightgray';
@@ -439,14 +369,24 @@ function setbuttons() {
     solvebutton.addEventListener('mouseout', (e) => {
         const src = e.target.tagName.toLocaleLowerCase() == 'div' ? e.target : e.target.parentElement;
         src.style.backgroundColor = 'white';
+        if (completelysure && !alreadywon) {
+            src.innerHTML = 'mostrar solução completa';
+            completelysure = false;
+        }
     });
     solvebutton.addEventListener('click', (e) => {
-        solveboard();
-        alreadywon = true;
-        updateboard();
-        clearhighlight();
+        if (completelysure) {
+            solveboard();
+            alreadywon = true;
+            updateboard();
+            clearhighlight();
+            e.target.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;essa é a solução&nbsp;&nbsp;&nbsp;&nbsp;';
+        } else {
+            e.target.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;certeza?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+            e.target.style.backgroundColor = 'red';
+            completelysure = true;
+        }
     });
-    // buttondiv.style.display = `${boardsize + boardsize * 0.5}`;
 }
 
 function movecursor(direction) {
