@@ -91,8 +91,6 @@ let cluesdown = [
     [32, 'organização mundial da saúde'],
     [33, 'x'],
 ];
-let boardsize;
-let squaresize;
 let sidelength = board.length - 2;
 
 let typingacross = true;
@@ -307,10 +305,6 @@ function itsaletter(str) {
 }
 
 function setgame() {
-    // boardsize = Math.min(window.innerHeight, window.innerWidth) * 0.7;
-    console.log(boardsize);
-    squaresize = boardsize / sidelength;
-
     document.addEventListener('keyup', (event) => {
         switch (event.code) {
             case 'Space': typingacross = !typingacross; highlight(); break;
